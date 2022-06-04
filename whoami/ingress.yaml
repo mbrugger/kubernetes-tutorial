@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: whoami
+spec:
+  rules:
+  - host: martinb-whoami.mycluster-fra02-b3-812276-ca2a79aa8f8d4c49e0f5a1962e51535b-0000.eu-de.containers.appdomain.cloud
+    http:
+      paths:
+      - backend:
+          service:
+            name: whoami
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
