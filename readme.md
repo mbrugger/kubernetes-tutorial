@@ -12,6 +12,9 @@ Deliverables:
 
 Please consider the best practices we discussed regarding building docker images and how to handle environment specific configuration
 
+## Deadline for delivery 12.6.2022 - 12:00
+
+
 ## Additional information
 
 ### Openshift access
@@ -43,6 +46,8 @@ Logging into oc will also generate a kubeconfig which allows you to interact wit
 During the presentation we used the `kubectl create` command a lot to demonstrate kubernetes. In real projects it is standard to create kubernetes manifests and track them in GIT.
 
 Store the manifests in a separate folder and apply the whole folder by running `kubectl apply -f .` in the folder containing the manifests.
+
+This is a sample deployment of the whoami application
 
 deployment.yaml:
 ```
@@ -86,7 +91,7 @@ spec:
   sessionAffinity: None
 ```
 
-ingress.yaml (please user your own project name as first component of the hostname NOT martinb-whoami!)
+ingress.yaml (please use your own project name as first component of the hostname **NOT martinb-whoami!**)
 ```
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -106,16 +111,16 @@ spec:
         pathType: Prefix
 ```
 
-Please check the official kubernetes documentation in case you have questions about kubernetes manifests.
-
 Afterwards you should be able to access your application via http://martinb-whoami.mycluster-fra02-b3-812276-ca2a79aa8f8d4c49e0f5a1962e51535b-0000.eu-de.containers.appdomain.cloud/
+
+Please also check the [official kubernetes documentation](https://kubernetes.io/docs/home/) in case you have questions about kubernetes manifests.
+
 
 ### Deploying custom built Docker images
 
 Your task will include building and deploying custom docker images.
 
 Please see the [Docker tutorial](https://docs.docker.com/get-started/) for details on how to build a docker image
-
 
 Openshift has a built-in image registry we are going to use.
 
