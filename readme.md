@@ -148,5 +148,5 @@ docker push default-route-openshift-image-registry.mycluster-fra02-b3-812276-ca2
 
 Afterwards the image is in the internal registry and can be referenced in your deployments using the *internal registry name*: `image-registry.openshift-image-registry.svc:5000/martinb/alpine:3.16.0`
 ```
-kubectl run -i -t --image=image-registry.openshift-image-registry.svc:5000/martinb/alpine:3.16.0 -- sh
+kubectl run -i -t --image=image-registry.openshift-image-registry.svc:5000/martinb/alpine:3.16.0 myshell
 ```
